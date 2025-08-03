@@ -57,17 +57,17 @@ export default function HeroSection() {
           className="object-cover w-full h-full"
         />
       </div>
-      {/* <div className="sticky top-0 h-screen w-full">
+      <div className="sticky top-0 h-screen w-full">
         <Image
           fill
-          src="/three.jpg"
+          src="/blurr.jpg"
           layout="fill"
           objectFit="cover"
           quality={100}
           alt="Hero Image"
           className="object-cover w-full h-full "
         />
-      </div> */}
+      </div>
     </div>
   );
 }

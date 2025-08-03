@@ -86,7 +86,7 @@ export function Lens({
         <div
           className="absolute inset-0"
           style={{
-            transform: `scale(1)`, // No zoom, just clarity
+            transform: `scale(2)`, // No zoom, just clarity
             transformOrigin: `${x}px ${y}px`,
           }}
         >

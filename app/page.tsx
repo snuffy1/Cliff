@@ -1,16 +1,22 @@
-import HeroSection from "@/components/HeroSection";
+// import HeroSection from "@/components/HeroSection";
 // import Glass from "@/components/Glass";
-import Image from "next/image";
 import Gif from "@/components/Gif";
 import React from "react";
-import { Lens } from "@/components/magicui/lens";
 import Focus from "@/components/Focus";
+import BasicExample from "@/components/Swiper";
+import Test from "@/components/test";
+import MagicReveal from "@/components/MagicReveal";
+import { TextScrollDemo } from "@/components/TextScroll";
 
 const page = () => {
   return (
     <div>
       <Gif />
+      <TextScrollDemo />
       <Focus />
+      {/* <BasicExample /> */}
+      {/* <Test /> */}
+      <MagicReveal />
       {/* <HeroSection /> */}
       {/* Add more sections or components as needed */}
     </div>

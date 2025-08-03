@@ -45,10 +45,96 @@ const Glass: React.FC = () => {
   const model = useRef<HTMLCanvasElement | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
   const frameContainerRef = useRef<HTMLDivElement | null>(null);
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const descriptionRef = useRef<HTMLHeadingElement | null>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Set initial states
+      gsap.set(frameContainerRef.current, {
+        opacity: 1,
+        y: 100,
+        scale: 1,
+      });
+
+      gsap.set(titleRef.current, {
+        opacity: 0,
+        y: 50,
+      });
+
+      gsap.set(descriptionRef.current, {
+        opacity: 0,
+        y: 50,
+      });
+
+      // Create timeline for sequential animations
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          scrub: 1,
+          markers: false, // Set to true for debugging
+        },
+      });
+
+      // Animate 3D model first
+      tl.to(frameContainerRef.current, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1,
+        ease: "power2.out",
+      })
+        // Then animate title
+        .to(
+          titleRef.current,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        ) // Start slightly before previous animation ends
+        // Finally animate description
+        .to(
+          descriptionRef.current,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out",
+          },
+          "-=0.2"
+        );
+
+      // Optional: Add a separate animation for the 3D model rotation enhancement
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top center",
+        end: "bottom center",
+        onUpdate: (self) => {
+          if (glassesRef.current) {
+            const rotation = self.progress * Math.PI * 2;
+            gsap.to(glassesRef.current.rotation, {
+              y: rotation,
+              duration: 0.3,
+              ease: "none",
+            });
+          }
+        },
+      });
+    }, sectionRef);
+
+    return () => {
+      ctx.revert(); // Cleanup
+    };
+  }, []);
 
   return (
     <div
-      className=" w-full min-h-screen overflow-hidden"
+      className="w-full min-h-screen overflow-hidden"
       style={{
         backgroundImage: `url('/images/backgroundd.avif')`,
         backgroundSize: "cover",
@@ -57,30 +143,25 @@ const Glass: React.FC = () => {
     >
       <section
         ref={sectionRef}
-        className=" w-full min-h-screen flex flex-col justify-center items-center overflow-hidden"
+        className="w-full min-h-screen flex flex-col justify-center items-center overflow-hidden"
       >
-        {/* Decorative elements */}
-        {/* <div className="absolute top-20 left-1/4 w-40 h-40 bg-[#e1aa12]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-60 h-60 bg-[#e1aa12]/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/3 left-1/3 w-32 h-32 border-2 border-[#e1aa12]/20 rounded-full" /> */}
-
         {/* Content */}
-        <div className=" z-10 w-8/12 mx-auto px-4">
+        <div className="z-10 w-8/12 mx-auto px-4">
           {/* 3D Model */}
           <div className="flex items-center">
             <div
               ref={frameContainerRef}
-              className="w-full  flex justify-center items-center will-change-transform h-[500px]"
+              className="w-full flex justify-center items-center will-change-transform h-[500px]"
             >
               <motion.div
-                className=" origin-center w-full h-full"
+                className="origin-center w-full h-full"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
               >
                 <Canvas
                   ref={model}
-                  className="absolute inset-0  h-screen w-screen -translate-x-[50px]  sm:-translate-x-[300px]"
+                  className="absolute inset-0 h-screen w-screen -translate-x-[50px] sm:-translate-x-[300px]"
                   camera={{ position: [-4, 0, 3], fov: 45 }}
                   style={{ height: "100vh", width: "100vw" }}
                 >
@@ -101,12 +182,19 @@ const Glass: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col h-screen">
-          {/*  Text content */}
-          <h1 className="text-5xl md:text-7xl font-serif text-center">
+
+        <div className="flex flex-col h-auto">
+          {/* Text content with GSAP animations */}
+          <h1
+            ref={titleRef}
+            className="text-5xl md:text-7xl font-serif text-center font-ramro"
+          >
             Why Cliff Lens?
           </h1>
-          <h2 className="text-4xl font-serif mt-4 text-center leading-loose ">
+          <h2
+            ref={descriptionRef}
+            className="text-4xl font-ramro mt-4  lg:mt-20 text-center leading-loose"
+          >
             Cliff is an esteemed eyewear company dedicated to transforming how
             people see the world, one pair of glasses at a time. Our journey
             began with a simple mission: to blend exceptional craftsmanship with

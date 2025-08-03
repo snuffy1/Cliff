@@ -8,6 +8,15 @@ body {
   @apply bg-black text-white font-sans antialiased;
 }
 
+@font-face {
+  font-family: "surendra";
+  src: url("../public/Montserrat.ttf");
+}
+
+.font-ramro {
+  font-family: "surendra";
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
 
