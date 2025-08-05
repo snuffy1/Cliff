@@ -1,12 +1,13 @@
-import { TextScrollDemo } from "@/components/TextScroll";
 import React from "react";
 
-const page = () => {
+export default function page() {
   return (
-    <div>
-      <TextScrollDemo />
+    <div className="min-h-screen">
+      <div className="h-50 w-50 p-2 rounded-full bg-white flex justify-start items-center">
+        <div className="size-24 blink-eye bg-black rounded-full flex justify-center items-center">
+          <div className="size-5 bg-white rounded-full"></div>
+        </div>
+      </div>
     </div>
   );
-};
-
-export default page;
+}

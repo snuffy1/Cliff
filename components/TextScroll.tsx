@@ -2,7 +2,7 @@
 
 import { TextScroll } from "./ui/text-scroll";
 
-export function TextScrollDemo() {
+export default function TextScrollDemo() {
   return (
     <div className="h-[30vh] mb-50 mt-50">
       <TextScroll

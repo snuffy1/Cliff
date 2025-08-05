@@ -1,24 +1,24 @@
-// import HeroSection from "@/components/HeroSection";
-// import Glass from "@/components/Glass";
 import Gif from "@/components/Gif";
 import React from "react";
 import Focus from "@/components/Focus";
-import BasicExample from "@/components/Swiper";
-import Test from "@/components/test";
 import MagicReveal from "@/components/MagicReveal";
-import { TextScrollDemo } from "@/components/TextScroll";
+import TextScrollDemo from "@/components/TextScroll";
+import Opacity from "@/components/Opacity";
+import Display from "@/components/Display";
+import Demo from "@/components/Demo";
+import Hero from "@/components/Hero";
 
 const page = () => {
   return (
     <div>
+      {/* <Display /> */}
+      <Hero />
       <Gif />
       <TextScrollDemo />
       <Focus />
-      {/* <BasicExample /> */}
-      {/* <Test /> */}
+      <Demo />
       <MagicReveal />
-      {/* <HeroSection /> */}
-      {/* Add more sections or components as needed */}
+      {/* <Opacity /> */}
     </div>
   );
 };

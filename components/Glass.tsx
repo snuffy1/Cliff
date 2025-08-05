@@ -193,7 +193,7 @@ const Glass: React.FC = () => {
           </h1>
           <h2
             ref={descriptionRef}
-            className="text-4xl font-ramro mt-4  lg:mt-20 text-center leading-loose"
+            className="text-4xl max-w-7xl mx-auto font-ramro mt-4  lg:mt-20 text-center leading-loose"
           >
             Cliff is an esteemed eyewear company dedicated to transforming how
             people see the world, one pair of glasses at a time. Our journey

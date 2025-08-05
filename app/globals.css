@@ -227,3 +227,18 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes aakha {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.blink-eye {
+  animation: aakha 4s linear infinite;
+}
