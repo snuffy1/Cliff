@@ -14,7 +14,7 @@ export default function MagicReveal() {
         scrollTrigger: {
           trigger: ".main",
           start: "top top",
-          end: "+=800%",
+          end: "+=300%",
           scrub: true,
           pin: true,
           //   markers: true,
@@ -33,7 +33,7 @@ export default function MagicReveal() {
         }
       );
       t.fromTo(
-        ".reveal-layer-second",
+        ".reveal-layer-",
         {
           clipPath: "inset(100% 100% 100% 100%)",
           borderRadius: "100px",
@@ -45,13 +45,13 @@ export default function MagicReveal() {
         }
       );
       t.fromTo(
-        ".reveal-layer-third",
+        ".reveal-layer-second",
         {
-          clipPath: "circle(0% at 50% 50%)",
-          borderRadius: "50%",
+          clipPath: "circle(0% at 50% 59%)",
+          borderRadius: "0%",
         },
         {
-          clipPath: "circle(100% at 50% 50%)",
+          clipPath: "circle(100% at 50% 59%)",
           borderRadius: "0%",
           ease: "none",
           duration: 1,
@@ -63,9 +63,9 @@ export default function MagicReveal() {
   }, []);
 
   return (
-    <div className="relative main min-h-screen overflow-hidden">
+    <div className="relative main h-[100vh] overflow-hidden">
       {/* Background blurred image */}
-      <div className="h-full w-full relative">
+      {/* <div className="h-full w-full relative">
         <Image
           src="/didi.jpg"
           alt="Blurred Image"
@@ -73,7 +73,7 @@ export default function MagicReveal() {
           objectFit="cover"
           quality={100}
         />
-      </div>
+      </div> */}
 
       {/* Revealed clear image layer */}
       <div className="absolute bottom-0 left-0 right-0 reveal-layer">
@@ -85,45 +85,17 @@ export default function MagicReveal() {
             objectFit="cover"
             quality={100}
           />
-          <div className="text-5xl font-serif shadow-md text-white absolute inset-0 bg-black/10 flex justify-center items-center px-10 text-center">
-            <p>
-              Discover premium lenses with Cliff. Crafted for clarity, comfort,
-              and style.
-            </p>
-          </div>
         </div>
       </div>
       <div className="absolute inset-0 reveal-layer-second overflow-hidden">
         <div className="relative w-full h-full">
           <Image
-            src="/ai1.jpg"
+            src="/didi.jpg"
             alt="Revealed Image"
             fill
             objectFit="cover"
             quality={100}
           />
-          <div className="text-5xl font-serif shadow-md text-white absolute inset-0 bg-black/10 flex justify-center items-center px-10 text-center">
-            <p>
-              Precision-crafted lenses by Cliff. Unmatched clarity, durability,
-              and vision comfort.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="absolute inset-0 reveal-layer-third overflow-hidden">
-        <div className="relative w-full h-full">
-          <Image
-            src="/ai4.jpg"
-            alt="Revealed Image"
-            fill
-            objectFit="cover"
-            quality={100}
-          />
-          <div className="text-5xl font-serif shadow-md text-white absolute inset-0 bg-black/10 flex justify-center items-center px-10 text-center">
-            <p>
-              Cliff lenses: superior vision, timeless style, ultimate comfort.
-            </p>
-          </div>
         </div>
       </div>
     </div>

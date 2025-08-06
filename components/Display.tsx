@@ -53,105 +53,103 @@ const HeroSection: React.FC<HeroProps> = ({ className = "" }) => {
       className={`relative min-h-screen overflow-hidden bg-black ${className}`}
     >
       {/* Main content container */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Content */}
-          <div className="text-white space-y-8">
-            <div className="space-y-6">
-              <div
-                className={`transition-all duration-1000 delay-300 ${
-                  isLoaded
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-10"
-                }`}
-              >
-                <span className="text-gray-400 text-sm font-semibold tracking-wider uppercase">
-                  Innovation • Vision • Excellence
-                </span>
-              </div>
-
-              <div
-                className={`transition-all duration-1000 delay-500 ${
-                  isLoaded
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-10"
-                }`}
-              >
-                <h1 className="text-6xl lg:text-8xl font-bold leading-tight">
-                  <span className="bg-gradient-to-r from-white via-[#78766a] to-[#d7d7d7] bg-clip-text text-transparent">
-                    Welcome
-                  </span>
-                </h1>
-              </div>
-
-              <div
-                className={`transition-all duration-1000 delay-700 ${
-                  isLoaded
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-10"
-                }`}
-              >
-                <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-lg">
-                  Pushing boundaries beyond the edge. Where innovation meets
-                  impossible, we create extraordinary solutions that redefine
-                  whats possible.
-                </p>
-              </div>
+      <div className="relative z-10 flex items-center justify-center">
+        {/* Left side - Content */}
+        <div className="absolute z-20 w-8/12 mx-auto px-4 text-white space-y-8">
+          <div className="space-y-6">
+            <div
+              className={`transition-all duration-1000 delay-300 ${
+                isLoaded
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
+              <span className="text-gray-400 text-sm font-semibold tracking-wider uppercase">
+                Innovation • Vision • Excellence
+              </span>
             </div>
 
-            {/* CTA Buttons */}
             <div
-              className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-900 ${
+              className={`transition-all duration-1000 delay-500 ${
                 isLoaded
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
               }`}
-            ></div>
+            >
+              <h1 className="text-6xl lg:text-8xl font-bold leading-tight uppercase">
+                <span className="bg-gradient-to-r from-zinc-850 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">
+                  Welcome
+                </span>
+              </h1>
+            </div>
 
-            {/* Stats */}
             <div
-              className={`grid grid-cols-3 gap-8 pt-8 transition-all duration-1000 delay-1100 ${
+              className={`transition-all duration-1000 delay-700 ${
                 isLoaded
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
               }`}
-            ></div>
+            >
+              <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-lg">
+                Pushing boundaries beyond the edge. Where innovation meets
+                impossible, we create extraordinary solutions that redefine
+                whats possible.
+              </p>
+            </div>
           </div>
 
-          {/* Right side - Interactive Lens */}
-          <div className="relative flex items-center justify-center">
-            <div
-              ref={lensRef}
-              className={`relative transition-all duration-1000 delay-200 ${
-                isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-90"
-              }`}
-              style={{ transform: lensTransform }}
-            >
-              {/* Lens SVG with glow effects */}
-              <div className="relative">
-                <img
-                  src="/lense.svg"
-                  alt="Cliff Lens"
-                  className="relative z-10 w-96 h-96 lg:w-[500px] lg:h-[500px] drop-shadow-2xl transition-all duration-300 hover:scale-105"
+          {/* CTA Buttons */}
+          <div
+            className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-900 ${
+              isLoaded
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          ></div>
+
+          {/* Stats */}
+          <div
+            className={`grid grid-cols-3 gap-8 pt-8 transition-all duration-1000 delay-1100 ${
+              isLoaded
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          ></div>
+        </div>
+
+        {/* Right side - Interactive Lens */}
+        <div className="relative z-10 mt-44 flex items-center justify-center">
+          <div
+            ref={lensRef}
+            className={`relative transition-all duration-1000 delay-200 ${
+              isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-90"
+            }`}
+            style={{ transform: lensTransform }}
+          >
+            {/* Lens SVG with glow effects */}
+            <div className="relative">
+              <img
+                src="/lense.svg"
+                alt="Cliff Lens"
+                className="relative z-10 w-96 h-96 lg:w-[500px] lg:h-[500px] drop-shadow-2xl transition-all duration-300 hover:scale-105"
+                style={{
+                  filter: "drop-shadow(0 0 30px rgba(34, 211, 238, 0.3))",
+                }}
+              />
+
+              {/* Floating particles */}
+              {[...Array(6)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute w-2 h-2 bg-[#ffffff] rounded-full opacity-60 animate-ping"
                   style={{
-                    filter: "drop-shadow(0 0 30px rgba(34, 211, 238, 0.3))",
+                    top: `${20 + i * 15}%`,
+                    left: `${10 + i * 12}%`,
+                    animationDelay: `${i * 0.5}s`,
+                    animationDuration: "2s",
                   }}
                 />
-
-                {/* Floating particles */}
-                {[...Array(6)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="absolute w-2 h-2 bg-[#ffffff] rounded-full opacity-60 animate-ping"
-                    style={{
-                      top: `${20 + i * 15}%`,
-                      left: `${10 + i * 12}%`,
-                      animationDelay: `${i * 0.5}s`,
-                      animationDuration: "2s",
-                    }}
-                  />
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </div>
