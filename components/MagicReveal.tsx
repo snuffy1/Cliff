@@ -1,20 +1,19 @@
 "use client";
-import React, { useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Demo from "@/components/Demo";
 
 export default function MagicReveal() {
   gsap.registerPlugin(ScrollTrigger);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const ctx = gsap.context(() => {
       const t = gsap.timeline({
         scrollTrigger: {
           trigger: ".main",
           start: "top top",
-          end: "+=800%",
+          end: "+400%",
           scrub: true,
           pin: true,
           //   markers: true,
@@ -48,11 +47,11 @@ export default function MagicReveal() {
         ".reveal-layer-third",
         {
           clipPath: "circle(0% at 50% 50%)",
-          borderRadius: "50%",
+          // borderRadius: "50%",
         },
         {
           clipPath: "circle(100% at 50% 50%)",
-          borderRadius: "0%",
+          // borderRadius: "0%",
           ease: "none",
           duration: 1,
         }
@@ -85,12 +84,6 @@ export default function MagicReveal() {
             objectFit="cover"
             quality={100}
           />
-          <div className="text-5xl font-serif shadow-md text-white absolute inset-0 bg-black/10 flex justify-center items-center px-10 text-center">
-            <p>
-              Discover premium lenses with Cliff. Crafted for clarity, comfort,
-              and style.
-            </p>
-          </div>
         </div>
       </div>
       <div className="absolute inset-0 reveal-layer-second overflow-hidden">
@@ -102,28 +95,17 @@ export default function MagicReveal() {
             objectFit="cover"
             quality={100}
           />
-          <div className="text-5xl font-serif shadow-md text-white absolute inset-0 bg-black/10 flex justify-center items-center px-10 text-center">
-            <p>
-              Precision-crafted lenses by Cliff. Unmatched clarity, durability,
-              and vision comfort.
-            </p>
-          </div>
         </div>
       </div>
       <div className="absolute inset-0 reveal-layer-third overflow-hidden">
         <div className="relative w-full h-full">
           <Image
-            src="/ai4.jpg"
+            src="/ai1.jpg"
             alt="Revealed Image"
             fill
             objectFit="cover"
             quality={100}
           />
-          <div className="text-5xl font-serif shadow-md text-white absolute inset-0 bg-black/10 flex justify-center items-center px-10 text-center">
-            <p>
-              Cliff lenses: superior vision, timeless style, ultimate comfort.
-            </p>
-          </div>
         </div>
       </div>
     </div>

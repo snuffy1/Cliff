@@ -4,7 +4,6 @@ import Focus from "@/components/Focus";
 import MagicReveal from "@/components/MagicReveal";
 import TextScrollDemo from "@/components/TextScroll";
 import Opacity from "@/components/Opacity";
-import Display from "@/components/Display";
 import Demo from "@/components/Demo";
 import Hero from "@/components/Hero";
 

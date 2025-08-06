@@ -7,7 +7,7 @@ const Gif = () => {
 
   return (
     <div className="relative">
-      <div className="sticky top-0 min-h-screen flex justify-center overflow-hidden will-change-transform">
+      <div className=" top-0 min-h-screen flex justify-center overflow-hidden will-change-transform">
         <video
           ref={videoRef}
           preload="auto"
