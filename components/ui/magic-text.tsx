@@ -38,7 +38,10 @@ export const MagicText: React.FC<MagicTextProps> = ({ text }) => {
   const words = text.split(" ");
 
   return (
-    <p ref={container} className="flex flex-wrap leading-[0.5] p-4">
+    <p
+      ref={container}
+      className="flex flex-wrap font-bold font-ramro leading-[0.5] gap-3 p-4"
+    >
       {words.map((word, i) => {
         const start = i / words.length;
 

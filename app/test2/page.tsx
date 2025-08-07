@@ -1,12 +1,12 @@
-import MagicReveal from "@/components/MagicReveal";
-import { MagicText } from "@/components/ui/magic-text";
+import React from "react";
+import Ctx from "@/components/Ctx";
 
-const Demo = () => {
+const page = () => {
   return (
-    <div className="h-screen">
-      <MagicReveal />
+    <div>
+      <Ctx />
     </div>
   );
 };
 
-export default Demo;
+export default page;

@@ -1,137 +1,114 @@
 import React from "react";
-import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Instagram, Facebook, Linkedin, Youtube } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo and Description */}
-          <div className="col-span-1">
-            <div className="flex items-center mb-4">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3">
-                <div className="w-6 h-6 bg-gray-900 rounded-full flex items-center justify-center">
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
-                </div>
+    <footer className="bg-transparent h-[100vh] backdrop-blur-sm text-white py-16 ">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-9xl mt-8 font-bold font-ramro text-center tracking-[1.1rem]">
+          STAY IN TOUCH
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          {/* COMPANY Section */}
+          <div>
+            {/* <h1 className="text-[#cccaca] uppercase font-semibold font-ramro mt-10 text-8xl tracking-wide">
+              Home
+            </h1>
+            <h2 className="text-[#cccaca] font-semibold font-ramro mt-10 text-6xl  tracking-wide">
+              Ophthalmic Lens
+            </h2>
+            <h2 className="text-[#cccaca] font-semibold font-ramro mt-10 text-7xl tracking-wide">
+              Accesories
+            </h2> */}
+            <ul className="text-4xl font-semibold font-ramro mt-10 mx-2 space-y-2">
+              <li>
+                <a href="#" className="text-white hover:underline">
+                  ABOUT US
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-white hover:underline">
+                  STORIES
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-white hover:underline">
+                  FAQ
+                </a>
+              </li>
+            </ul>
+
+            <div className="mt-2 ml-1.5 pt-8">
+              <h3 className="text-white text-start font-semibold text-xl mb-6 tracking-wide">
+                SOCIAL MEDIA
+              </h3>
+              <div className="flex items-start justify-start space-x-6 mb-12">
+                <a
+                  href="#"
+                  className="text-[#7e5d03] hover:text-[#E1AA12] transition-colors"
+                >
+                  <Instagram size={24} />
+                </a>
+                <a
+                  href="#"
+                  className="text-[#7e5d03] hover:text-[#E1AA12] transition-colors"
+                >
+                  <Facebook size={24} />
+                </a>
+                <a
+                  href="#"
+                  className="text-[#7e5d03] hover:text-[#E1AA12] transition-colors"
+                >
+                  <Linkedin size={24} />
+                </a>
+                <a
+                  href="#"
+                  className="text-[#7e5d03] hover:text-[#E1AA12] transition-colors"
+                >
+                  <Youtube size={24} />
+                </a>
               </div>
-              <span className="text-xl font-semibold">Awake</span>
-            </div>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Awake Nepal is dedicated to empowering individuals through mindful
-              living, education, and community support.
-            </p>
-            <div className="flex space-x-4 mt-6">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Facebook size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Twitter size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Linkedin size={20} />
-              </a>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
-                >
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
-                >
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
-                >
-                  Blog
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4">Resources</h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
-                >
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
-                >
-                  Terms & Conditions
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
-                >
-                  FAQs
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4">Join Our Newsletter</h3>
-            <p className="text-gray-300 text-sm mb-4">
-              Stay updated with our latest news, articles, and resources.
-            </p>
-            <button className="w-full bg-white text-gray-900 py-2 px-4 rounded hover:bg-gray-100 transition-colors font-medium text-sm">
-              Subscribe
+          <div className="flex flex-row items-end justify-end gap-5">
+            <Image
+              src="/logo.png"
+              alt="Company Logo"
+              width={190}
+              height={100}
+            />
+            <button className="px-6 py-3  rounded-lg bg-[#E1AA12] text-white font-medium hover:bg-[#C9961A] active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#E1AA12]/50 flex items-center justify-center gap-2">
+              Contact us today
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M7 17l9.2-9.2M17 17V7H7"
+                />
+              </svg>
             </button>
           </div>
+          {/* Logo Section - Replace with your SVG */}
+          {/* <div className="flex justify-center items-start">
+            <Image
+              src="/lense.svg"
+              alt="Company Logo"
+              width={350}
+              height={400}
+            />
+          </div> */}
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        {/* Copyright */}
+        <div className="border-t border-gray-800 flex w-full mt-10 justify-between">
           <p className="text-gray-400 text-sm">
             © All Rights Reserved | Awake Nepal Pvt. Ltd.
           </p>

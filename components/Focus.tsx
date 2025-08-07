@@ -14,13 +14,10 @@ const Focus = () => {
   }, []);
   return (
     <div>
-      <h1 className="text-center text-6xl font-ramro mb-4">
-        What our lens can do!!
-      </h1>
       <Lens defaultPosition={{ x: 260, y: 150 }} lensSize={lens}>
         <Image
           className="h-full w-full object-cover"
-          src="/hightest.png"
+          src="/ai4.jpg"
           alt="image placeholder"
           width={1000}
           height={1000}

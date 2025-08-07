@@ -9,10 +9,7 @@ import { EffectCards } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import { SparklesIcon } from "lucide-react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-
-import { Badge } from "@/components/ui/badge";
 
 interface CarouselProps {
   images: { src: string; alt: string }[];

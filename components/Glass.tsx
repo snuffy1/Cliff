@@ -134,7 +134,7 @@ const Glass: React.FC = () => {
 
   return (
     <div
-      className="w-full min-h-screen overflow-hidden"
+      className="w-full h-[100vh] overflow-hidden"
       style={{
         backgroundImage: `url('/images/backgroundd.avif')`,
         backgroundSize: "cover",
@@ -181,26 +181,6 @@ const Glass: React.FC = () => {
               </motion.div>
             </div>
           </div>
-        </div>
-
-        <div className="flex flex-col h-auto">
-          {/* Text content with GSAP animations */}
-          <h1
-            ref={titleRef}
-            className="text-5xl md:text-7xl font-serif text-center font-ramro"
-          >
-            Why Cliff Lens?
-          </h1>
-          <h2
-            ref={descriptionRef}
-            className="text-4xl max-w-7xl mx-auto font-ramro mt-4  lg:mt-20 text-center leading-loose"
-          >
-            Cliff is an esteemed eyewear company dedicated to transforming how
-            people see the world, one pair of glasses at a time. Our journey
-            began with a simple mission: to blend exceptional craftsmanship with
-            innovative design, creating eyewear that not only enhances vision
-            but also elevates style.
-          </h2>
         </div>
       </section>
     </div>
