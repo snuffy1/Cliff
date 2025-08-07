@@ -7,8 +7,6 @@ import CliffFeatures from "@/components/features/CliffFeatures";
 import MagicReveal from "@/components/MagicReveal";
 import Footer from "@/components/Footer";
 import ScrollCarousel from "@/components/features/ScrollCarousel";
-import Ctx from "@/components/Ctx";
-
 const page = () => {
   return (
     <div className="relative">
@@ -22,7 +20,6 @@ const page = () => {
       <MagicReveal />
       <ScrollCarousel />
       <BgAttached />
-      <Ctx />
       <div className="z-20">
         <Footer />
       </div>
