@@ -3,7 +3,6 @@ import React, { useLayoutEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Demo from "@/components/Demo";
 
 export default function MagicReveal() {
   gsap.registerPlugin(ScrollTrigger);

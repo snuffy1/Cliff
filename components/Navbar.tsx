@@ -40,7 +40,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-transparent text-white cursor-pointer">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto py-4 flex items-center justify-between">
         {/* <div className="text-2xl text-amber-300 font-bold tracking-wide">Cliff</div> */}
         <a
           href="#"

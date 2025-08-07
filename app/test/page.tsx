@@ -1,13 +1,34 @@
 import React from "react";
+import Demo from "@/components/Demo";
+// import Hero from "@/components/Hero";
+import BgAttached from "@/components/bg-attachment/BgAttached";
+import Glass from "@/components/Glass";
+import CliffFeatures from "@/components/features/CliffFeatures";
+import MagicReveal from "@/components/MagicReveal";
+import Footer from "@/components/Footer";
+import CliffFeatures2 from "@/components/features/CliffFeatures2";
+import ScrollCarousel from "@/components/features/ScrollCarousel";
 
-export default function page() {
+const page = () => {
   return (
-    <div className="min-h-screen">
-      <div className="h-50 w-50 p-2 rounded-full bg-white flex justify-start items-center">
-        <div className="size-24 blink-eye bg-black rounded-full flex justify-center items-center">
-          <div className="size-5 bg-white rounded-full"></div>
-        </div>
+    <div className="relative">
+      {/* <Display /> */}
+      <div className="sticky top-0 z-0">
+        <Glass />
+      </div>
+      <Demo />
+      <BgAttached />
+
+      <CliffFeatures />
+      <BgAttached />
+
+      <ScrollCarousel />
+      <MagicReveal />
+      <div className="z-20">
+        <Footer />
       </div>
     </div>
   );
-}
+};
+
+export default page;

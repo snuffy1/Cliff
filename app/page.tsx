@@ -1,8 +1,4 @@
 import React from "react";
-// import MagicReveal from "@/components/MagicReveal";
-// import TextScrollDemo from "@/components/TextScroll";
-// import Opacity from "@/components/Opacity";
-// import Display from "@/components/Display";
 import Demo from "@/components/Demo";
 // import Hero from "@/components/Hero";
 import BgAttached from "@/components/bg-attachment/BgAttached";
@@ -10,6 +6,8 @@ import Glass from "@/components/Glass";
 import CliffFeatures from "@/components/features/CliffFeatures";
 import MagicReveal from "@/components/MagicReveal";
 import Footer from "@/components/Footer";
+import ScrollCarousel from "@/components/features/ScrollCarousel";
+import Ctx from "@/components/Ctx";
 
 const page = () => {
   return (
@@ -19,10 +17,12 @@ const page = () => {
         <Glass />
       </div>
       <Demo />
-      <CliffFeatures />
       <BgAttached />
       <CliffFeatures />
       <MagicReveal />
+      <ScrollCarousel />
+      <BgAttached />
+      <Ctx />
       <div className="z-20">
         <Footer />
       </div>
